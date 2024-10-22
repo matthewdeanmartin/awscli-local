@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-description = 'Thin wrapper around the "aws" command line interface for use with LocalStack'
+description = 'Thin wrapper around the "aws" command line interface for use with LocalStack *for Windows*.'
 README = description
 
 try:
@@ -15,16 +15,16 @@ except Exception:
 if __name__ == '__main__':
 
     setup(
-        name='awscli-local',
-        version='0.22.0',
+        name='awscli-local-win',
+        version='0.23.0',
         description=description,
         long_description=README,
         long_description_content_type='text/markdown',
-        author='LocalStack Team',
-        author_email='info@localstack.cloud',
-        url='https://github.com/localstack/awscli-local',
+        author='Matthew Martin, LocalStack Team',
+        author_email='matthewdeanmartin@gmail.com',
+        url='https://github.com/matthewdeanmartin/awscli-local',
         packages=[],
-        scripts=['bin/awslocal', 'bin/awslocal.bat'],
+        scripts=['bin/awslocalw', 'bin/awslocalw.bat'],
         package_data={},
         data_files={},
         install_requires=['localstack-client'],

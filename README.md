@@ -1,9 +1,20 @@
 # LocalStack AWS CLI
 
-[![PyPI version][pypi-version]][pypi]
-
-This package provides the `awslocal` command, which is a thin wrapper around the `aws`
+This package provides the `awslocalw` command, which is a thin wrapper around the `aws`
 command line interface for use with [LocalStack](https://github.com/localstack/localstack).
+
+Commands are suffixed by `w` so they don't conflict with `awslocal`, e.g. `awslocalw` 
+
+# Why this fork.
+This is to handle this issue:
+
+https://github.com/localstack/awscli-local/issues/84
+
+which undoes this commit for Windows users
+
+https://github.com/localstack/awscli-local/commit/8712c0007294c8f2a80ef47fdea375c8971329ec#diff-b49fad6200a705d348ab2c32761fe0eda06b69e599bd8f305bfa09001660c61bL57
+
+When I say "Windows" I mean cmd.exe, powershell, git-bash but not WSL or WSL2.
 
 ## Installation
 
