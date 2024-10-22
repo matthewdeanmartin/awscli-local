@@ -24,6 +24,7 @@ if __name__ == '__main__':
         author_email='matthewdeanmartin@gmail.com',
         url='https://github.com/matthewdeanmartin/awscli-local',
         packages=[],
+        # This pattern has suprising behavior. Venv don't load in cmd.exe and powershell on windows.
         scripts=['bin/awslocalw', 'bin/awslocalw.bat'],
         package_data={},
         data_files={},

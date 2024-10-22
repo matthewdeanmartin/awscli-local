@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awscli-local-win"
+version = "0.24.0"
+description = "Thin wrapper around the 'aws' command line interface for use with LocalStack *for Windows*."
+readme = "README.md"
+readme-content-type = "text/markdown"
+license = {text = "Apache License 2.0"}
+authors = [
+    {name = "Matthew Martin", email = "matthewdeanmartin@gmail.com"},
+    {name = "LocalStack Team", email = ""}
+]
+homepage = "https://github.com/matthewdeanmartin/awscli-local"
+keywords = ["aws", "localstack", "cli", "windows"]
+
+classifiers = [
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.6",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Software Development :: Testing"
+]
+
+[project.optional-dependencies]
+ver1 = ["awscli"]
+
+[project.dependencies]
+dependencies = ["localstack-client", "awscli"]
+
+[project.entry-points]
+console_scripts = [
+    "awslocalw = awscli_local_win.main:main",
+    "awslocalw.bat = awscli_local_win.main:main"
+]

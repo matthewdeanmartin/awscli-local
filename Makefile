@@ -10,9 +10,10 @@ install:      ## Install dependencies in local virtualenv folder
 		(test -e $(VENV_DIR) || virtualenv $(VENV_OPTS) $(VENV_DIR)) && \
 		(test ! -e requirements.txt || ($(VENV_RUN); $(PIP_CMD) install -r requirements.txt))
 
-publish:      ## Publish the library to the central PyPi repository
-	# build and upload archive
-	($(VENV_RUN) && pip install setuptools && ./setup.py sdist && twine upload dist/*)
+# yeah don't do this. Use trusted publishers.
+# publish:      ## Publish the library to the central PyPi repository
+# 	# build and upload archive
+# 	($(VENV_RUN) && pip install setuptools && ./setup.py sdist && twine upload dist/*)
 
 lint:         ## Run code linter
 	flake8 bin/awslocal --ignore=E501,W503
