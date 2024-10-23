@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "awscli-local-win"
-version = "0.25.0"
+version = "0.26.0"
 description = "Thin wrapper around the 'aws' command line interface for use with LocalStack *for Windows*."
 readme =  {file = "README.md", content-type = "text/markdown"}
 license = {text = "Apache License 2.0"}
@@ -30,15 +30,16 @@ classifiers = [
 
 dependencies = [
     "localstack-client",
-    "awscli"
+    "boto3"
+    # "awscli" # Can't or this blocks awscli v2!
 ]
 
 [project.urls]
 homepage = "https://github.com/matthewdeanmartin/awscli-local"
 
 [project.optional-dependencies]
-# not really optional.
 ver1 = ["awscli"]
+# version 2 can't be installed via pip!
 
 [project.scripts]
 awslocalw = "awscli_local_win.__main__:main"
